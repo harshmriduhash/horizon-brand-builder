@@ -9,7 +9,7 @@ import type {
 } from '../types/brand-types.js';
 
 export class AuditorAgent {
-  constructor(private llm: LLMAdapter) {}
+  constructor(private llm: LLMAdapter) { }
 
   async conductAudit(
     profile: BrandProfile,
