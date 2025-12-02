@@ -144,13 +144,13 @@ Output Format: JSON
     console.log('\n🔍 Validating proof points with sources...\n');
     const validationResult = positioning.proofPoints && positioning.proofPoints.length > 0
       ? await this.proofPointValidator.validateProofPoints(
-          positioning.proofPoints,
-          {
-            brandName: profile.brandName,
-            industry: profile.brandName || 'Consumer Goods',
-            category: profile.brandType || 'General',
-          }
-        )
+        positioning.proofPoints,
+        {
+          brandName: profile.brandName,
+          industry: profile.brandName || 'Consumer Goods',
+          category: profile.brandType || 'General',
+        }
+      )
       : { validatedPoints: [], invalidPoints: [] };
 
     // If some proof points are invalid, generate alternatives
