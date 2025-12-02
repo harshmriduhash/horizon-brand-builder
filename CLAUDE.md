@@ -12,7 +12,7 @@ version: 1.0.0
 
 > **For Claude Code AI Assistant**: Read this file when working on this project
 
----
+----
 
 ## 🎯 Project Overview
 
