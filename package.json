@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx src/index-interactive.ts",
     "dev:api": "tsx src/index.ts",
+    "server": "tsx server/app.ts",
     "build": "tsc",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts",
@@ -57,12 +58,18 @@
   "description": "Horizon Brand Builder Pro - Generic AI-powered brand building system for ANY brand. Includes Fast Mode (2-5min), Professional Mode (consulting-grade, 64 deliverables), V2.0 intelligent accuracy, deep research (77 subtopics), and project management. Works for B2C, B2B, Luxury, SaaS, E-commerce, and more.",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
+    "@sentry/node": "^7.100.0",
     "axios": "^1.7.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
     "llm-squared-framework": "file:../llm-squared-framework",
     "marked": "^16.4.0",
     "openai": "^4.0.0",
-    "playwright": "^1.56.0"
+    "playwright": "^1.56.0",
+    "prom-client": "^15.0.0",
+    "stripe": "^14.18.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

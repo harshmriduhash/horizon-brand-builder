@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Brand Builder Pro - SaaS Pricing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card.popular {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .plan-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            font-size: 2.5em;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .plan-price sup {
+            font-size: 0.5em;
+        }
+
+        .plan-price .period {
+            font-size: 0.5em;
+            color: #999;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .plan-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-features li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.2em;
+        }
+
+        .plan-features li.disabled {
+            opacity: 0.5;
+        }
+
+        .plan-features li.disabled:before {
+            content: "✗";
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .cta-section {
+            background: white;
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .trial-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .faq {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .faq h3 {
+            font-size: 1.3em;
+            margin: 30px 0 15px 0;
+        }
+
+        .faq p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .cta-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 Horizon Brand Builder Pro</h1>
+            <p class="subtitle">Professional AI-powered brand strategy in minutes</p>
+        </header>
+
+        <div class="cta-section">
+            <div class="trial-badge">🎁 14-day free trial with 5 runs</div>
+            <h2>Ready to transform your brand?</h2>
+            <p>No credit card required. Start with our free trial today.</p>
+            <button class="btn btn-primary" onclick="handleSignup()">Start Free Trial</button>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Free Tier -->
+            <div class="pricing-card">
+                <div class="plan-name">Free</div>
+                <div class="plan-price">$0<span class="period">/month</span></div>
+                <p style="color: #999; margin-bottom: 20px;">Perfect to try</p>
+                <ul class="plan-features">
+                    <li>50k tokens/month</li>
+                    <li>5 runs/month</li>
+                    <li>Fast Mode only</li>
+                    <li class="disabled">Professional Mode</li>
+                    <li class="disabled">Research Mode</li>
+                    <li class="disabled">Specialized Agents</li>
+                    <li class="disabled">Export reports</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="handleSignup()">Get Started</button>
+            </div>
+
+            <!-- Pro Tier -->
+            <div class="pricing-card popular">
+                <div class="badge">Most Popular</div>
+                <div class="plan-name">Pro</div>
+                <div class="plan-price">$99<span class="period">/month</span></div>
+                <p style="color: #667eea; margin-bottom: 20px;">For individuals & small agencies</p>
+                <ul class="plan-features">
+                    <li>500k tokens/month</li>
+                    <li>50 runs/month</li>
+                    <li>Fast Mode ✓</li>
+                    <li>Professional Mode ✓</li>
+                    <li>Research Mode ✓</li>
+                    <li>Specialized Agents ✓</li>
+                    <li>Export & share reports ✓</li>
+                </ul>
+                <button class="btn btn-primary" onclick="handleCheckout('pro')">Upgrade to Pro</button>
+            </div>
+
+            <!-- Agency Tier -->
+            <div class="pricing-card">
+                <div class="plan-name">Agency</div>
+                <div class="plan-price">$499<span class="period">/month</span></div>
+                <p style="color: #999; margin-bottom: 20px;">For agencies & enterprises</p>
+                <ul class="plan-features">
+                    <li>2M tokens/month</li>
+                    <li>500 runs/month</li>
+                    <li>All features ✓</li>
+                    <li>White-label option ✓</li>
+                    <li>Priority support ✓</li>
+                    <li>Custom training ✓</li>
+                    <li>Dedicated account manager ✓</li>
+                </ul>
+                <button class="btn btn-primary" onclick="handleCheckout('agency')">Get Agency Plan</button>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+
+            <h3>What's included in the trial?</h3>
+            <p>5 free runs using Fast Mode (complete brand strategy in 2-5 minutes). No credit card required. Trial expires in 14 days.</p>
+
+            <h3>Can I upgrade after trial?</h3>
+            <p>Yes! If you like it, upgrade to Pro or Agency at any time. You'll get all premium features immediately.</p>
+
+            <h3>What if I need more tokens?</h3>
+            <p>Pro and Agency plans include generous monthly quotas. Contact us for enterprise tiers with custom limits.</p>
+
+            <h3>Can I cancel anytime?</h3>
+            <p>Absolutely. No long-term contracts. Cancel your subscription anytime from your dashboard.</p>
+
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept all major credit cards (Visa, Mastercard, Amex) via Stripe. Bank transfers available for Agency plans.</p>
+
+            <h3>Do you offer refunds?</h3>
+            <p>Yes, 7-day money-back guarantee if you're not satisfied.</p>
+
+            <h3>What's your support like?</h3>
+            <p>Free tier: community support. Pro: email support (24h response). Agency: priority support + dedicated manager.</p>
+        </div>
+
+        <footer>
+            <p>© 2025 Horizon Brand Builder. All rights reserved.</p>
+            <p>
+                <a href="#" style="color: white;">Privacy Policy</a> |
+                <a href="#" style="color: white;">Terms of Service</a> |
+                <a href="#" style="color: white;">Contact</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const API_URL = process.env.API_URL || 'http://localhost:3001';
+
+        async function handleSignup() {
+            const email = prompt('Enter your email to start free trial:');
+            if (!email) return;
+
+            try {
+                const response = await fetch(`${API_URL}/api/auth/signup`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    alert(`✅ Trial created! You have ${data.trial.creditsRemaining} free runs.\nRedirecting to app...`);
+                    window.location.href = '/app?userId=' + data.userId;
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+
+        async function handleCheckout(plan) {
+            const email = prompt('Enter your email:');
+            if (!email) return;
+
+            try {
+                const response = await fetch(`${API_URL}/api/billing/checkout`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        plan,
+                        email,
+                        successUrl: window.location.origin + '/billing/success',
+                        cancelUrl: window.location.origin + '/pricing'
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success && data.checkoutUrl) {
+                    window.location.href = data.checkoutUrl;
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+    </script>
+</body>
+</html>
